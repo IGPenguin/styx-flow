@@ -1,0 +1,8 @@
+{
+  "name": "styx",
+  "description": "Styx Flow — refines raw notes and sorts them into a prioritized backlog (P0–P4)",
+  "author": {
+    "name": "Adam Svoboda",
+    "email": "eidamsvoboda@gmail.com"
+  }
+}

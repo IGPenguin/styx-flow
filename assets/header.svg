@@ -1,0 +1,109 @@
+<svg width="1200" height="200" viewBox="0 0 1200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <clipPath id="bounds">
+      <rect width="1200" height="200"/>
+    </clipPath>
+
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#020b18;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#030d1f;stop-opacity:1" />
+    </linearGradient>
+
+    <linearGradient id="waterGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#caf0f8;stop-opacity:1" />
+      <stop offset="35%" style="stop-color:#48cae4;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#0096c7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#023e8a;stop-opacity:1" />
+    </linearGradient>
+
+    <filter id="waterGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur3" />
+      <feGaussianBlur stdDeviation="8" result="blur8" />
+      <feGaussianBlur stdDeviation="15" result="blur15" />
+      <feMerge>
+        <feMergeNode in="blur15" />
+        <feMergeNode in="blur8" />
+        <feMergeNode in="blur3" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <style>
+      .title {
+        fill: url(#waterGradient);
+        font-family: 'Georgia', serif;
+        font-size: 130px;
+        font-weight: 900;
+        letter-spacing: 12px;
+        text-transform: uppercase;
+        filter: drop-shadow(0px 0px 10px #00b4d8);
+      }
+      .wave { fill: none; stroke-width: 1; }
+
+      /* Waves flow left or right at different speeds — paths extend to 2400px for seamless loop */
+      @keyframes flow-left  { from { transform: translateX(0);       } to { transform: translateX(-1200px); } }
+      @keyframes flow-right { from { transform: translateX(-1200px); } to { transform: translateX(0);        } }
+    </style>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#bgGradient)" />
+
+  <!-- Animated wave lines — clipped to viewport, paths extend 2400px for seamless looping -->
+  <g clip-path="url(#bounds)">
+
+    <!-- y=18, A=4, up, flow-left 16s — slow upper drift -->
+    <path class="wave" stroke="#48cae4" opacity="0.18"
+      style="animation: flow-left 16s linear infinite"
+      d="M 0 18 Q 50 14 100 18 Q 150 22 200 18 Q 250 14 300 18 Q 350 22 400 18 Q 450 14 500 18 Q 550 22 600 18 Q 650 14 700 18 Q 750 22 800 18 Q 850 14 900 18 Q 950 22 1000 18 Q 1050 14 1100 18 Q 1150 22 1200 18 Q 1250 14 1300 18 Q 1350 22 1400 18 Q 1450 14 1500 18 Q 1550 22 1600 18 Q 1650 14 1700 18 Q 1750 22 1800 18 Q 1850 14 1900 18 Q 1950 22 2000 18 Q 2050 14 2100 18 Q 2150 22 2200 18 Q 2250 14 2300 18 Q 2350 22 2400 18" />
+
+    <!-- y=37, A=5, down, flow-right 12s -->
+    <path class="wave" stroke="#0096c7" opacity="0.15"
+      style="animation: flow-right 12s linear infinite"
+      d="M 0 37 Q 50 42 100 37 Q 150 32 200 37 Q 250 42 300 37 Q 350 32 400 37 Q 450 42 500 37 Q 550 32 600 37 Q 650 42 700 37 Q 750 32 800 37 Q 850 42 900 37 Q 950 32 1000 37 Q 1050 42 1100 37 Q 1150 32 1200 37 Q 1250 42 1300 37 Q 1350 32 1400 37 Q 1450 42 1500 37 Q 1550 32 1600 37 Q 1650 42 1700 37 Q 1750 32 1800 37 Q 1850 42 1900 37 Q 1950 32 2000 37 Q 2050 42 2100 37 Q 2150 32 2200 37 Q 2250 42 2300 37 Q 2350 32 2400 37" />
+
+    <!-- y=56, A=4, up, flow-left 10s -->
+    <path class="wave" stroke="#48cae4" opacity="0.14"
+      style="animation: flow-left 10s linear infinite"
+      d="M 0 56 Q 50 52 100 56 Q 150 60 200 56 Q 250 52 300 56 Q 350 60 400 56 Q 450 52 500 56 Q 550 60 600 56 Q 650 52 700 56 Q 750 60 800 56 Q 850 52 900 56 Q 950 60 1000 56 Q 1050 52 1100 56 Q 1150 60 1200 56 Q 1250 52 1300 56 Q 1350 60 1400 56 Q 1450 52 1500 56 Q 1550 60 1600 56 Q 1650 52 1700 56 Q 1750 60 1800 56 Q 1850 52 1900 56 Q 1950 60 2000 56 Q 2050 52 2100 56 Q 2150 60 2200 56 Q 2250 52 2300 56 Q 2350 60 2400 56" />
+
+    <!-- y=75, A=6, down, flow-right 8s -->
+    <path class="wave" stroke="#0077b6" opacity="0.12"
+      style="animation: flow-right 8s linear infinite"
+      d="M 0 75 Q 50 81 100 75 Q 150 69 200 75 Q 250 81 300 75 Q 350 69 400 75 Q 450 81 500 75 Q 550 69 600 75 Q 650 81 700 75 Q 750 69 800 75 Q 850 81 900 75 Q 950 69 1000 75 Q 1050 81 1100 75 Q 1150 69 1200 75 Q 1250 81 1300 75 Q 1350 69 1400 75 Q 1450 81 1500 75 Q 1550 69 1600 75 Q 1650 81 1700 75 Q 1750 69 1800 75 Q 1850 81 1900 75 Q 1950 69 2000 75 Q 2050 81 2100 75 Q 2150 69 2200 75 Q 2250 81 2300 75 Q 2350 69 2400 75" />
+
+    <!-- y=93, A=4, up, flow-left 7s — fading toward title -->
+    <path class="wave" stroke="#48cae4" opacity="0.08"
+      style="animation: flow-left 7s linear infinite"
+      d="M 0 93 Q 50 89 100 93 Q 150 97 200 93 Q 250 89 300 93 Q 350 97 400 93 Q 450 89 500 93 Q 550 97 600 93 Q 650 89 700 93 Q 750 97 800 93 Q 850 89 900 93 Q 950 97 1000 93 Q 1050 89 1100 93 Q 1150 97 1200 93 Q 1250 89 1300 93 Q 1350 97 1400 93 Q 1450 89 1500 93 Q 1550 97 1600 93 Q 1650 89 1700 93 Q 1750 97 1800 93 Q 1850 89 1900 93 Q 1950 97 2000 93 Q 2050 89 2100 93 Q 2150 97 2200 93 Q 2250 89 2300 93 Q 2350 97 2400 93" />
+
+    <!-- y=112, A=5, down, flow-right 6s — center, fastest, most transparent -->
+    <path class="wave" stroke="#0096c7" opacity="0.06"
+      style="animation: flow-right 6s linear infinite"
+      d="M 0 112 Q 50 117 100 112 Q 150 107 200 112 Q 250 117 300 112 Q 350 107 400 112 Q 450 117 500 112 Q 550 107 600 112 Q 650 117 700 112 Q 750 107 800 112 Q 850 117 900 112 Q 950 107 1000 112 Q 1050 117 1100 112 Q 1150 107 1200 112 Q 1250 117 1300 112 Q 1350 107 1400 112 Q 1450 117 1500 112 Q 1550 107 1600 112 Q 1650 117 1700 112 Q 1750 107 1800 112 Q 1850 117 1900 112 Q 1950 107 2000 112 Q 2050 117 2100 112 Q 2150 107 2200 112 Q 2250 117 2300 112 Q 2350 107 2400 112" />
+
+    <!-- y=130, A=4, up, flow-left 7s — mirroring y=93 back up -->
+    <path class="wave" stroke="#48cae4" opacity="0.08"
+      style="animation: flow-left 7s linear infinite"
+      d="M 0 130 Q 50 126 100 130 Q 150 134 200 130 Q 250 126 300 130 Q 350 134 400 130 Q 450 126 500 130 Q 550 134 600 130 Q 650 126 700 130 Q 750 134 800 130 Q 850 126 900 130 Q 950 134 1000 130 Q 1050 126 1100 130 Q 1150 134 1200 130 Q 1250 126 1300 130 Q 1350 134 1400 130 Q 1450 126 1500 130 Q 1550 134 1600 130 Q 1650 126 1700 130 Q 1750 134 1800 130 Q 1850 126 1900 130 Q 1950 134 2000 130 Q 2050 126 2100 130 Q 2150 134 2200 130 Q 2250 126 2300 130 Q 2350 134 2400 130" />
+
+    <!-- y=148, A=6, down, flow-right 8s -->
+    <path class="wave" stroke="#0077b6" opacity="0.12"
+      style="animation: flow-right 8s linear infinite"
+      d="M 0 148 Q 50 154 100 148 Q 150 142 200 148 Q 250 154 300 148 Q 350 142 400 148 Q 450 154 500 148 Q 550 142 600 148 Q 650 154 700 148 Q 750 142 800 148 Q 850 154 900 148 Q 950 142 1000 148 Q 1050 154 1100 148 Q 1150 142 1200 148 Q 1250 154 1300 148 Q 1350 142 1400 148 Q 1450 154 1500 148 Q 1550 142 1600 148 Q 1650 154 1700 148 Q 1750 142 1800 148 Q 1850 154 1900 148 Q 1950 142 2000 148 Q 2050 154 2100 148 Q 2150 142 2200 148 Q 2250 154 2300 148 Q 2350 142 2400 148" />
+
+    <!-- y=166, A=4, up, flow-left 10s -->
+    <path class="wave" stroke="#48cae4" opacity="0.14"
+      style="animation: flow-left 10s linear infinite"
+      d="M 0 166 Q 50 162 100 166 Q 150 170 200 166 Q 250 162 300 166 Q 350 170 400 166 Q 450 162 500 166 Q 550 170 600 166 Q 650 162 700 166 Q 750 170 800 166 Q 850 162 900 166 Q 950 170 1000 166 Q 1050 162 1100 166 Q 1150 170 1200 166 Q 1250 162 1300 166 Q 1350 170 1400 166 Q 1450 162 1500 166 Q 1550 170 1600 166 Q 1650 162 1700 166 Q 1750 170 1800 166 Q 1850 162 1900 166 Q 1950 170 2000 166 Q 2050 162 2100 166 Q 2150 170 2200 166 Q 2250 162 2300 166 Q 2350 170 2400 166" />
+
+    <!-- y=183, A=5, down, flow-right 12s — slow lower drift -->
+    <path class="wave" stroke="#0096c7" opacity="0.18"
+      style="animation: flow-right 12s linear infinite"
+      d="M 0 183 Q 50 188 100 183 Q 150 178 200 183 Q 250 188 300 183 Q 350 178 400 183 Q 450 188 500 183 Q 550 178 600 183 Q 650 188 700 183 Q 750 178 800 183 Q 850 188 900 183 Q 950 178 1000 183 Q 1050 188 1100 183 Q 1150 178 1200 183 Q 1250 188 1300 183 Q 1350 178 1400 183 Q 1450 188 1500 183 Q 1550 178 1600 183 Q 1650 188 1700 183 Q 1750 178 1800 183 Q 1850 188 1900 183 Q 1950 178 2000 183 Q 2050 188 2100 183 Q 2150 178 2200 183 Q 2250 188 2300 183 Q 2350 178 2400 183" />
+
+  </g>
+
+  <!-- Title rendered above the wave layer -->
+  <text x="50%" y="105" dominant-baseline="central" text-anchor="middle" class="title" filter="url(#waterGlow)">Styx Flow</text>
+
+</svg>

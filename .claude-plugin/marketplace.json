@@ -1,0 +1,24 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "styx-flow",
+  "description": "Styx Flow — Claude Code skills by Adam Svoboda",
+  "owner": {
+    "name": "Adam Svoboda",
+    "email": "eidamsvoboda@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "styx",
+      "description": "Styx Flow — refines raw notes and sorts them into a prioritized backlog (P0–P4)",
+      "author": {
+        "name": "Adam Svoboda"
+      },
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/IGPenguin/styx-flow.git",
+        "path": "claude-skill",
+        "ref": "chaos"
+      }
+    }
+  ]
+}
