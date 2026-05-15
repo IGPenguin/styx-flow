@@ -93,7 +93,7 @@ For each item:
 - **Chore** — maintenance, cleanup, refactor, tooling
 - **Question** — needs a decision or clarification before action
 
-**Refine** — rewrite the note as a clear, actionable one-liner. Preserve the original intent exactly — the river shapes the pebble, it does not replace it. Never invent scope that wasn't implied.
+**Refine** — rewrite the note as a clear, actionable summary. Preserve the original intent exactly — the river shapes the pebble, it does not replace it. Never invent scope that wasn't implied. Never drop details: every specific from the source (file paths, line numbers, function names, hints, reproduction steps, pointers) must survive in the output, either in the description bullets or the Details field. Use multiple bullets in the description when the note has multiple details worth keeping.
 
 **Score** — assign:
 - **Effort:** XS (< 30min) | S (30min–2hrs) | M (2–5hrs) | L (1–2 days) | XL (3-5 days) — calibrated assuming Claude Code assistance
@@ -123,6 +123,7 @@ Rules:
 - Group items by priority tier P0 → P4
 - Within each tier, order: Bugs → Features → Improvements → other types
 - Every item from the combined input must appear — nothing disappears silently
+- Every specific detail from source notes must survive — file paths, line numbers, function names, hints, and pointers are never dropped, only reformatted or consolidated
 - Re-scored items carry the `~` flag on their priority line
 - Follow the exact item format from `papyrus.md`
 

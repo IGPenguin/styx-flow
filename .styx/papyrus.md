@@ -7,7 +7,8 @@
 ## P0 — Hard Blockers *(drop everything)*
 
 ### [ID] [TYPE]: [Summary]
-- [Refined one-liner description]
+- [Refined description]
+- [Additional bullet for more detail, file path, line/function reference, hint, or reproduction step — add as many bullets as needed; never drop specifics from the source]
 - Priority: P0 — [one-sentence reason]
 - Type: [Bug|Feature|Improvement|Idea|Chore|Question] | Severity: [Critical] *(bugs only)*
 - Effort: [XS|S|M|L|XL] | Gain: [XS|S|M|L|XL]
@@ -18,7 +19,8 @@
 ## P1 — Serious Issues & Big Wins
 
 ### [ID] [TYPE]: [Summary]
-- [Refined one-liner description]
+- [Refined description]
+- [Additional bullets for file refs, hints, specifics — as many as needed]
 - Priority: P1 — [one-sentence reason]
 - Type: [type] | Severity: [Critical|Major|Minor] *(bugs only)*
 - Effort: [XS|S|M|L|XL] | Gain: [XS|S|M|L|XL]
@@ -29,7 +31,8 @@
 ## P2 — Release-Gating
 
 ### [ID] [TYPE]: [Summary]
-- [Refined one-liner description]
+- [Refined description]
+- [Additional bullets for file refs, hints, specifics — as many as needed]
 - Priority: P2 — [one-sentence reason]
 - Type: [type]
 - Effort: [XS|S|M|L|XL] | Gain: [XS|S|M|L|XL]
@@ -40,7 +43,8 @@
 ## P3 — Should-Fix
 
 ### [ID] [TYPE]: [Summary]
-- [Refined one-liner description]
+- [Refined description]
+- [Additional bullets for file refs, hints, specifics — as many as needed]
 - Priority: P3 — [one-sentence reason]
 - Type: [type]
 - Effort: [XS|S|M|L|XL] | Gain: [XS|S|M|L|XL]
@@ -51,7 +55,8 @@
 ## P4 — Nice to Have / Parking Lot
 
 ### [ID] [TYPE]: [Summary]
-- [Refined one-liner description]
+- [Refined description]
+- [Additional bullets for file refs, hints, specifics — as many as needed]
 - Priority: P4 — [one-sentence reason]
 - Type: [type]
 - Effort: [XS|S|M|L|XL] | Gain: [XS|S|M|L|XL]

@@ -30,3 +30,4 @@
 - **Bug First Within Tier.** Within each priority level, list Bugs → Features → Improvements → other types.
 - **Needs Tag.** When a note is too vague to score, add `Needs: [what clarification is required]` as a detail line.
 - **No Ghosting.** Never silently discard or merge items. If two notes are about the same thing, group them explicitly and say so.
+- **Preserve All Details.** Never remove specifics from source notes — file paths, line numbers, function names, hints, reproduction steps, pointers to code. Reformat freely, consolidate if clearly redundant, but every specific must survive in the output. Use nested or additional bullet points to carry forward details that don't fit in a one-liner.
