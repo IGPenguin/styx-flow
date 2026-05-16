@@ -41,9 +41,11 @@ Before asking anything, silently read both of these files using the Read tool:
 
 These files are user-editable. Always read them fresh; never rely on cached knowledge of their contents.
 
-## Phase 2 — Read Existing TODOs.md
+## Phase 2 — Read Project Context
 
-Silently attempt to read `TODOs.md` in the current working directory using the Read tool.
+Silently attempt to read `DESIGN.md` in the current working directory using the Read tool. If present, treat it as authoritative design intent — use it to inform scoring, classify items against stated goals, and flag anything that conflicts with or diverges from the design.
+
+Then silently attempt to read `TODOs.md` in the current working directory using the Read tool.
 
 **If TODOs.md does not exist:** proceed to Phase 2b with no prior items.
 
