@@ -14,6 +14,12 @@
 - Effort: [XS|S|M|L|XL] | Gain: [XS|S|M|L|XL]
 - Details: [additional context, original phrasing, or clarification flag — omit field entirely if none]
 
+#### Testing Checklist
+
+[Optional — use for features and bugs that benefit from explicit test verification. List as markdown checkboxes. Styx preserves this section verbatim on re-runs. Omit the heading entirely if not needed.]
+
+- [ ] [specific behavior to verify]
+
 ---
 
 ## P1 — Serious Issues & Big Wins
@@ -25,6 +31,10 @@
 - Type: [type] | Severity: [Critical|Major|Minor] *(bugs only)*
 - Effort: [XS|S|M|L|XL] | Gain: [XS|S|M|L|XL]
 - Details: [omit if none]
+
+#### Testing Checklist
+
+[Optional — see P0 format note above.]
 
 ---
 
@@ -38,6 +48,10 @@
 - Effort: [XS|S|M|L|XL] | Gain: [XS|S|M|L|XL]
 - Details: [omit if none]
 
+#### Testing Checklist
+
+[Optional — see P0 format note above.]
+
 ---
 
 ## P3 — Should-Fix
@@ -50,6 +64,10 @@
 - Effort: [XS|S|M|L|XL] | Gain: [XS|S|M|L|XL]
 - Details: [omit if none]
 
+#### Testing Checklist
+
+[Optional — see P0 format note above.]
+
 ---
 
 ## P4 — Nice to Have / Parking Lot
@@ -61,6 +79,10 @@
 - Type: [type]
 - Effort: [XS|S|M|L|XL] | Gain: [XS|S|M|L|XL]
 - Details: [omit if none]
+
+#### Testing Checklist
+
+[Optional — see P0 format note above.]
 
 ---
 
@@ -87,9 +109,19 @@ Use this format when writing or updating `EPICS.md`. Structure mirrors TODOs.md 
 - [Additional bullets for scope, prerequisites, or design notes — as many as needed]
 - Priority: P1 — [one-sentence reason]
 - Type: Epic
-- Effort: XL | Gain: [XS|S|M|L|XL]
+- Effort: [XS|S|M|L|XL] | Gain: [XS|S|M|L|XL]
 - Prerequisites: [blocking items — omit field if none]
 - Details: [omit if none]
+
+#### Design Brief
+
+[Optional — freeform content below the structured header. Use named subheadings (#### Level 4), code blocks, tables, and testing checklists freely. Styx preserves this entire section verbatim on re-runs and never reformats or truncates it. Omit the heading entirely if no extended design notes are needed.]
+
+##### Testing Checklist
+
+[Optional — use markdown checkboxes. Lives inside the Design Brief. Omit if not needed.]
+
+- [ ] [specific behavior to verify]
 
 ---
 
@@ -99,9 +131,13 @@ Use this format when writing or updating `EPICS.md`. Structure mirrors TODOs.md 
 - [Description]
 - Priority: P2 — [one-sentence reason]
 - Type: Epic
-- Effort: XL | Gain: [XS|S|M|L|XL]
+- Effort: [XS|S|M|L|XL] | Gain: [XS|S|M|L|XL]
 - Prerequisites: [omit if none]
 - Details: [omit if none]
+
+#### Design Brief
+
+[Optional — see P1 format note above.]
 
 ---
 
@@ -111,9 +147,13 @@ Use this format when writing or updating `EPICS.md`. Structure mirrors TODOs.md 
 - [Description]
 - Priority: P3 — [one-sentence reason]
 - Type: Epic
-- Effort: XL | Gain: [XS|S|M|L|XL]
+- Effort: [XS|S|M|L|XL] | Gain: [XS|S|M|L|XL]
 - Prerequisites: [omit if none]
 - Details: [omit if none]
+
+#### Design Brief
+
+[Optional — see P1 format note above.]
 
 ---
 
@@ -123,9 +163,13 @@ Use this format when writing or updating `EPICS.md`. Structure mirrors TODOs.md 
 - [Description]
 - Priority: P4 — [one-sentence reason]
 - Type: Epic
-- Effort: XL | Gain: [XS|S|M|L|XL]
+- Effort: [XS|S|M|L|XL] | Gain: [XS|S|M|L|XL]
 - Prerequisites: [omit if none]
 - Details: [omit if none]
+
+#### Design Brief
+
+[Optional — see P1 format note above.]
 
 ---
 
