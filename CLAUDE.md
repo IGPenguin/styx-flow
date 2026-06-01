@@ -14,14 +14,20 @@ The primary delivery is a **Claude Code skill** (`/styx`).
 |------|---------|
 | `claude-skill/skills/styx/SKILL.md` | The `/styx` skill definition |
 | `install-skill.sh` | One-command installer for the skill |
-| `.styx/papyrus.md` | Output format template (user-editable after install) |
-| `.styx/manifesto.md` | Prioritization philosophy (user-editable after install) |
+| `.styx/papyrus.md` | Output format template for both TODOs.md and EPICS.md (user-editable after install) |
+| `.styx/manifesto.md` | Prioritization philosophy, scoring rubric, and Epic threshold (user-editable after install) |
 
 ## TODOs.md — Living Backlog
 
 After each `/styx` run, the skill writes the full sorted output to `TODOs.md` in the current working directory. This is the primary output — a committable, shareable backlog file that grows with every run.
 
 On subsequent runs, the skill reads the existing `TODOs.md` and merges it with any new notes before re-sorting, so the file stays current without manual editing.
+
+## EPICS.md — Major Expansion Plans
+
+Items that meet at least two of the Epic threshold criteria (XL effort, 3+ systems in scope, unknown design path) are classified as **Epics** and written to `EPICS.md` instead of `TODOs.md`. Each `/styx` run reads and re-sorts both files together.
+
+`EPICS.md` uses the same P1–P4 structure as `TODOs.md` but with an Epic-specific priority interpretation: P1 = ready to implement, P2 = design session is next, P3 = long-term vision, P4 = speculative. The file is only created if at least one Epic exists. If no EPICS.md is present and no items qualify as Epics, the file is not created.
 
 ## History Logging
 

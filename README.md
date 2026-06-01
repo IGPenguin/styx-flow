@@ -4,13 +4,15 @@
 
 ## 🌊 Turn raw notes into a prioritized backlog
 
-**Styx Flow** is a Claude Code skill that takes your unfiltered notes, cross-checks with existing TODOs and shapes them into a clean, sorted backlog document with summaries, reasoning for priortization and easy to read tagging.
+**Styx Flow** is a Claude Code skill that takes your unfiltered notes, cross-checks with existing TODOs and shapes them into a clean, sorted backlog document with summaries, reasoning for prioritization and easy to read tagging.
 
 - **P0:** Hard blockers for development or users
 - **P1:** Serious bug or big easy win
 - **P2:** Must ship before next release
 - **P3:** Should fix, won't block the release
 - **P4:** Nice to have / parking lot
+
+Large-scope items — XL effort, broad system footprint, or unknown architecture — are automatically flagged as **Epics** and routed to a separate `EPICS.md` file so they don't clutter the sprint backlog.
 
 ---
 
@@ -28,6 +30,14 @@ Type `/styx` in any [Claude Code](https://claude.com/product/claude-code) sessio
 5. Write the full result back to `TODOs.md` and display it inline
 
 `TODOs.md` is the living backlog. Commit it, share it, track it in git like any other project file.
+
+### Epics
+
+Items that are too large for a sprint — XL effort plus broad scope or an unknown design path — are automatically classified as **Epics** and written to `EPICS.md` instead of `TODOs.md`.
+
+`EPICS.md` uses the same P1–P4 structure as `TODOs.md`, but with a shifted meaning: P1 = ready to implement, P2 = design session is next, P3 = long-term vision, P4 = speculative. Every `/styx` run reads and re-sorts both files together.
+
+The threshold is intentionally relaxed: meeting any **two** of the three signals (XL effort, 3+ systems in scope, unknown design path) is enough to qualify.
 
 ### History
 

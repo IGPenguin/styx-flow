@@ -65,3 +65,68 @@
 ---
 
 *Styx Flow complete — [N] items processed*
+
+---
+
+# EPICS.md Format
+
+Use this format when writing or updating `EPICS.md`. Structure mirrors TODOs.md exactly — same item format, same P1–P4 tiers, same ordering rules within tiers (Gain desc as tiebreaker).
+
+---
+
+# EPICS.md — Major Expansion Plans
+
+*[N] epics · last updated [date]*
+
+---
+
+## P1 — Active *(design complete, ready to implement)*
+
+### [ID] Epic: [Summary]
+- [What this expansion delivers and why it matters]
+- [Additional bullets for scope, prerequisites, or design notes — as many as needed]
+- Priority: P1 — [one-sentence reason]
+- Type: Epic
+- Effort: XL | Gain: [XS|S|M|L|XL]
+- Prerequisites: [blocking items — omit field if none]
+- Details: [omit if none]
+
+---
+
+## P2 — Planned *(concept clear, design session needed)*
+
+### [ID] Epic: [Summary]
+- [Description]
+- Priority: P2 — [one-sentence reason]
+- Type: Epic
+- Effort: XL | Gain: [XS|S|M|L|XL]
+- Prerequisites: [omit if none]
+- Details: [omit if none]
+
+---
+
+## P3 — Long-term Vision
+
+### [ID] Epic: [Summary]
+- [Description]
+- Priority: P3 — [one-sentence reason]
+- Type: Epic
+- Effort: XL | Gain: [XS|S|M|L|XL]
+- Prerequisites: [omit if none]
+- Details: [omit if none]
+
+---
+
+## P4 — Speculative / Shelved
+
+### [ID] Epic: [Summary]
+- [Description]
+- Priority: P4 — [one-sentence reason]
+- Type: Epic
+- Effort: XL | Gain: [XS|S|M|L|XL]
+- Prerequisites: [omit if none]
+- Details: [omit if none]
+
+---
+
+*EPICS.md — [N] epics*

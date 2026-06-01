@@ -63,11 +63,24 @@ Also note: items present in a `.styx/` history file but absent from the current 
 ### Case B — Exists but was not written by Styx
 No `# Styx Flow` header. Treat the entire file as raw input — classify and score all content from scratch as if it were a paste.
 
+### Read EPICS.md
+
+Silently attempt to read `EPICS.md` in the current working directory.
+
+**If EPICS.md does not exist:** proceed with no prior epics. It will be created if any items are classified as Epics during this run.
+
+**If EPICS.md exists**, classify using the same Case A/B logic:
+- **Case A (previously written by Styx):** Detected by a `# EPICS` or `# EPICS.md` header line. Parse styx-formatted epic items; extract their IDs and priorities as user-assigned values. Carry them forward with the same re-evaluation rules as TODOs.
+- **Case B:** Treat all content as freeform — classify and score from scratch.
+
+Add all extracted epic IDs to the same global ID registry — IDs must be unique across both TODOs.md and EPICS.md.
+
 ### Announce what you found
 Before asking for new input, briefly tell the user:
-- How many styx-formatted items were found (and their current priority breakdown)
-- How many freeform/manually added items were found
-- Example: *"Found 14 existing items (3 P1, 6 P2, 4 P3, 1 P4) and 2 manually added notes. Paste any new notes to add, or press Enter to re-sort as-is."*
+- How many styx-formatted items were found in TODOs.md (and their current priority breakdown)
+- How many epics were found in EPICS.md (and their priority breakdown)
+- How many freeform/manually added items were found across both files
+- Example: *"Found 14 items in TODOs.md (3 P1, 6 P2, 4 P3, 1 P4), 7 epics in EPICS.md (1 P1, 4 P2, 2 P3), and 2 unrefined notes. Paste any new notes to add, or press Enter to re-sort as-is."*
 
 If TODOs.md did not exist, ask instead: *"Paste your raw notes, or give me a file path to read. I'll handle the rest."*
 
@@ -116,6 +129,34 @@ For each item:
 
 When a note is too vague to score: classify as **Idea**, assign **P3** conservatively, add `Needs: [what clarification is required]`.
 
+### Epic Promotion
+
+After scoring an item, check whether it qualifies as an **Epic** — a feature too large and architecturally open-ended for the regular sprint backlog.
+
+**Epic threshold — any two of the three must be true:**
+1. **Effort:** XL (3–5 days with Claude Code)
+2. **Scope:** Crosses 3+ core systems, or introduces a new major architectural layer
+3. **Design gate:** The *how* is unknown — a dedicated design session (Hades Gate or equivalent) is required before implementation can begin
+
+A large-effort item with broad scope qualifies even if the design approach is known. A clearly scoped item with unknown architecture qualifies if it's also XL effort. Items meeting only one criterion stay in TODOs.md.
+
+**Promoting a new item to an Epic:**
+- Set `Type: Epic` in the item header
+- Route it to EPICS.md (not TODOs.md) in Phase 4
+- Add a `Promoted:` line explaining why: `Promoted to EPICS.md — XL effort + crosses 3+ systems`
+
+**Carrying forward existing EPICS.md items:**
+Same rules as TODOs.md Case A — respect existing priority, re-evaluate, flag disagreements with `~`. Use this Epic-specific P1–P4 interpretation:
+
+| Priority | Meaning for Epics |
+|----------|-------------------|
+| P1 | Design complete or near-complete; implementation is the next step |
+| P2 | Concept is clear; a design session (Hades Gate) is the next step |
+| P3 | Long-term vision; compelling but far out |
+| P4 | Speculative, vague, or blocked on multiple unshipped prerequisites |
+
+**Demotion:** If an existing EPICS.md item no longer meets at least two threshold criteria — scope was reduced, effort re-estimated lower — flag it `~P[N] — consider demoting to TODOs.md`. Never move it automatically.
+
 ## Phase 4 — Output the Flow
 
 Generate the Styx Flow document following the structure in `papyrus.md` exactly.
@@ -130,6 +171,8 @@ Rules:
 - Follow the exact item format from `papyrus.md`
 
 **Write the output to `TODOs.md`** using the Write tool. Display it to the user as well.
+
+**If any items are classified as Epics:** also write (or update) `EPICS.md` using the EPICS format from `papyrus.md`. Same structure as TODOs.md — P1 through P4 sections, same item format, same ordering rules within tiers (order by Gain desc as a tiebreaker within each tier). If there are no epics — none existing and none newly promoted — do not create or modify `EPICS.md`.
 
 ## Phase 5 — Save History
 

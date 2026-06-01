@@ -23,6 +23,18 @@
 - **Gain:** XS (negligible) | S (minor improvement) | M (meaningful, noticeable) | L (significant impact on UX/stability/velocity) | XL (transformative)
 - **Severity (bugs only):** Critical (crash/blocker) | Major (significant dysfunction) | Minor (cosmetic/edge case)
 
+## Epic Threshold
+
+An item qualifies as an **Epic** — too large for the sprint backlog, routed to EPICS.md instead — when any two of the following are true:
+
+1. **Effort XL** — 3–5 days even with Claude Code
+2. **Scope** — crosses 3+ core systems, or introduces a new major architectural layer
+3. **Design gate** — the *how* is unknown; a dedicated design session is required before implementation begins
+
+Large-but-well-understood items with known implementation paths stay in TODOs.md at P3/P4. The key signal is "we can't start coding this yet."
+
+Epics use the same P1–P4 rubric with a shifted interpretation: P1 = ready to implement, P2 = design session is next, P3 = long-term vision, P4 = speculative or blocked.
+
 ## Codex
 
 - **No Invention.** Never add items that weren't in the source notes.
@@ -31,3 +43,4 @@
 - **Needs Tag.** When a note is too vague to score, add `Needs: [what clarification is required]` as a detail line.
 - **No Ghosting.** Never silently discard or merge items. If two notes are about the same thing, group them explicitly and say so.
 - **Preserve All Details.** Never remove specifics from source notes — file paths, line numbers, function names, hints, reproduction steps, pointers to code. Reformat freely, consolidate if clearly redundant, but every specific must survive in the output. Use nested or additional bullet points to carry forward details that don't fit in a one-liner.
+- **Two Files.** TODOs.md holds sprint-backlog items. EPICS.md holds epics. Never put an Epic in TODOs.md or a regular item in EPICS.md.
