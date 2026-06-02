@@ -43,13 +43,13 @@ These files are user-editable. Always read them fresh; never rely on cached know
 
 ## Phase 2 — Read Project Context
 
-Silently attempt to read `DESIGN.md` in the current working directory using the Read tool. If present, treat it as authoritative design intent — use it to inform scoring, classify items against stated goals, and flag anything that conflicts with or diverges from the design.
+Silently attempt to read `DESIGN.md` in the current working directory using the Read tool; if not found, try `docs/DESIGN.md`. If present, treat it as authoritative design intent — use it to inform scoring, classify items against stated goals, and flag anything that conflicts with or diverges from the design. Also silently attempt to read `docs/GENESIS.md` if present — it provides lore and world-building context that informs scoring of narrative or design items.
 
-Then silently attempt to read `TODOs.md` in the current working directory using the Read tool.
+Then silently attempt to read `TODOs.md` in the current working directory using the Read tool. If not found, try `docs/TODOs.md`. Note which path was found — you will write output back to that same path.
 
-**If TODOs.md does not exist:** proceed to Phase 2b with no prior items.
+**If neither exists:** proceed to Phase 2b with no prior items.
 
-**If TODOs.md exists**, classify its state:
+**If found**, classify its state:
 
 ### Case A — Previously written by Styx
 Detected by the presence of a `# Styx Flow` header line. Parse its contents into two buckets:
@@ -65,7 +65,7 @@ No `# Styx Flow` header. Treat the entire file as raw input — classify and sco
 
 ### Read EPICS.md
 
-Silently attempt to read `EPICS.md` in the current working directory.
+Silently attempt to read `EPICS.md` in the current working directory. If not found, try `docs/EPICS.md`. Note which path was found (if any) — you will write output back to that same path, defaulting to `docs/EPICS.md` if TODOs.md was found in `docs/`.
 
 **If EPICS.md does not exist:** proceed with no prior epics. It will be created if any items are classified as Epics during this run.
 
@@ -170,9 +170,9 @@ Rules:
 - Re-scored items carry the `~` flag on their priority line
 - Follow the exact item format from `papyrus.md`
 
-**Write the output to `TODOs.md`** using the Write tool. Display it to the user as well.
+**Write the output to the path where TODOs.md was found** (`TODOs.md` in root, or `docs/TODOs.md`) using the Write tool. Display it to the user as well.
 
-**If any items are classified as Epics:** also write (or update) `EPICS.md` using the EPICS format from `papyrus.md`. Same structure as TODOs.md — P1 through P4 sections, same item format, same ordering rules within tiers (order by Gain desc as a tiebreaker within each tier). If there are no epics — none existing and none newly promoted — do not create or modify `EPICS.md`.
+**If any items are classified as Epics:** also write (or update) `EPICS.md` at the corresponding path (`EPICS.md` or `docs/EPICS.md`) using the EPICS format from `papyrus.md`. Same structure as TODOs.md — P1 through P4 sections, same item format, same ordering rules within tiers (order by Gain desc as a tiebreaker within each tier). If there are no epics — none existing and none newly promoted — do not create or modify `EPICS.md`.
 
 ## Phase 5 — Save History
 
